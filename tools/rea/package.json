@@ -1,0 +1,8 @@
+{
+  "name": "drift-arrows-research",
+  "private": true,
+  "description": "Isolated official REA CLI; no agent registration or global setup.",
+  "devDependencies": {
+    "rea-agents": "6.5.0"
+  }
+}
