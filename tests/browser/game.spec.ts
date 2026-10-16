@@ -320,7 +320,7 @@ test('hinted arrow blinks until a move and respects reduced motion', async ({ pa
 test('footer links to the project repository', async ({ page, context }) => {
   await page.goto('/');
   const link = page.getByRole('link', { name: 'Source on GitHub' });
-  await expect(link).toHaveAttribute('href', 'https://github.com/8YdUwVC8CZMa/mc.arrows');
+  await expect(link).toHaveAttribute('href', 'https://github.com/CarlMGregory/mc.arrows');
   await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   await expect(page.locator('.footer-divider')).toBeVisible();
   await expect(page.locator('.toolbar #restart')).toBeVisible();
@@ -334,12 +334,12 @@ test('footer links to the project repository', async ({ page, context }) => {
   const game = await current(page);
   await page.locator(`#arrows [data-arrow-id="${available(game)[0].id}"]`).press('Enter');
   await expect(page.locator('#message')).toBeEmpty();
-  await context.route('https://github.com/8YdUwVC8CZMa/mc.arrows', route =>
+  await context.route('https://github.com/CarlMGregory/mc.arrows', route =>
     route.fulfill({ status: 200, contentType: 'text/html', body: '<title>Repository</title>' }));
   const popup = page.waitForEvent('popup');
   await link.click();
   const repository = await popup;
-  await expect(repository).toHaveURL('https://github.com/8YdUwVC8CZMa/mc.arrows');
+  await expect(repository).toHaveURL('https://github.com/CarlMGregory/mc.arrows');
   await repository.close();
 });
 

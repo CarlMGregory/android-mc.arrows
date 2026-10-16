@@ -79,7 +79,7 @@ element('#app').innerHTML = `
     </section>
     <hr class="footer-divider" />
     <footer><button id="love-trigger" type="button">One</button> arrow at a time. <span>No rush.</span>
-      <a class="repo-link" href="https://github.com/8YdUwVC8CZMa/mc.arrows" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+      <a class="repo-link" href="https://github.com/CarlMGregory/mc.arrows" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
     </footer>
     <aside id="storage-warning" class="storage-warning" role="alert" hidden>
       <p></p><button id="storage-retry" class="text-button">Try saving again</button>
