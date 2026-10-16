@@ -200,6 +200,21 @@ before publication; no uniqueness or trademark clearance is asserted.
 
 ## Implementation
 
+### Sideload release builds
+
+`npm run android:release` builds and lints a non-debuggable, release-signed APK:
+`android\app\build\outputs\apk\release\app-release.apk`.
+Signing requires `.local\drift-release.p12` and `.local\release-signing.json`
+containing `alias` and `password`. Both are private, ignored files. Never commit,
+publish, or share them; retain a secure backup outside this disposable worktree.
+All future updates must use this same key and an increased Android `versionCode`.
+Only distribute the APK, not the signing backup.
+
+The release uses the same app ID as the debug build but a different signing key.
+Uninstall the debug app before first installing the release; uninstalling deletes
+saved progress. Subsequent releases signed with the same key can update in place.
+GitHub Releases may host the APK for sideloading; publishing is a separate step.
+
 `src\engine.ts` contains pure rules and seeded procedural level construction.
 Each arrow stores a head-to-tail path of adjacent grid cells. Its head ray must
 be free against the existing board, and its body cannot double back across its

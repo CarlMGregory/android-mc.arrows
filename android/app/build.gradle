@@ -20,9 +20,19 @@ android {
         debug {
             storeFile rootProject.file('../.local/debug.keystore')
         }
+        release {
+            if (System.getenv('DRIFT_RELEASE_STORE')) {
+                storeFile file(System.getenv('DRIFT_RELEASE_STORE'))
+                storePassword System.getenv('DRIFT_RELEASE_PASSWORD')
+                keyAlias System.getenv('DRIFT_RELEASE_ALIAS')
+                keyPassword System.getenv('DRIFT_RELEASE_PASSWORD')
+            }
+        }
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

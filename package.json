@@ -12,6 +12,7 @@
     "test:e2e": "npm run build && playwright test",
     "android:sync": "npm run build && cap sync android",
     "android:apk": "npm run android:sync && powershell -NoProfile -File tools\\build-android.ps1",
+    "android:release": "npm run android:sync && powershell -NoProfile -File tools\\build-android.ps1 -Release",
     "android:open": "cap open android"
   },
   "dependencies": {
