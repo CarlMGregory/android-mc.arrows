@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="drift_background">#f5f2ea</color>
+    <color name="colorPrimary">#295c4e</color>
+    <color name="colorPrimaryDark">#243d37</color>
+    <color name="colorAccent">#b27936</color>
+</resources>
